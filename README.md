@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app)
+# Pokemoon
+es una aplicación interactiva diseñada para los fanáticos de Pokémon, que permite a los usuarios buscar y explorar información detallada sobre sus Pokémon favoritos. Utilizando una base de datos en línea, los usuarios pueden buscar Pokémon por nombre o número de Pokédex, obtener estadísticas, tipos, habilidades y más. 
+
+.
 
 ## Getting Started
 
