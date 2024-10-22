@@ -3,7 +3,7 @@
 
 function About() {
   return (
-    <div>About view</div>
+    <div></div>
   )
 }
 
