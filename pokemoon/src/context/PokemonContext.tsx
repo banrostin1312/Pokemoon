@@ -7,6 +7,8 @@ import IPokemon from "../interfaces/IPokemon";
 
 interface PokemonContextProps {
     pokemons: IPokemon[],
+    error: string | null,
+    loading:boolean,
 }
 
 const PokemonContext = createContext<PokemonContextProps | null>(null);
@@ -14,16 +16,19 @@ const PokemonContext = createContext<PokemonContextProps | null>(null);
 export const PokemonProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
     const [pokemons, setPokemons] = useState<IPokemon[]>([]);
-
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
+        console.log("fetching all pokemons.....");
+
         const fetchAllPokemons = async () => {
             try {
                 const response = await axios.get("https://pokeapi.co/api/v2/pokemon");
                 const data = await response.data.results;
-                   
+
                 const pokemonsWhitImages = await Promise.all(
-                    data.map(async (pokemon:IPokemon) => {
+                    data.map(async (pokemon: IPokemon) => {
                         const pokemonDetailedResponse = await axios.get(pokemon.url);
                         return {
                             name: pokemonDetailedResponse.data.name,
@@ -33,9 +38,12 @@ export const PokemonProvider: React.FC<{ children: ReactNode }> = ({ children })
                     })
                 )
                 setPokemons(pokemonsWhitImages);
-                
+
             } catch (error) {
                 console.error(error);
+                setError("failed to fetch pokemons")
+            } finally {
+                setLoading(false);
             }
 
         }
@@ -43,7 +51,7 @@ export const PokemonProvider: React.FC<{ children: ReactNode }> = ({ children })
     }, []);
 
     return (
-        <PokemonContext.Provider value={{ pokemons }}>
+        <PokemonContext.Provider value={{ pokemons , error, loading}}>
             {children}
         </PokemonContext.Provider>
     )
