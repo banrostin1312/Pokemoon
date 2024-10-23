@@ -3,7 +3,9 @@
 
 function PokeApps() {
   return (
-    <div></div>
+    <div>
+      <title>PokeApps</title>
+    </div>
   )
 }
 

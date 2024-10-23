@@ -3,7 +3,9 @@
 
 function PokeDex() {
   return (
-    <div></div>
+    <div>
+      <title>PokeDex</title>
+    </div>
   )
 }
 

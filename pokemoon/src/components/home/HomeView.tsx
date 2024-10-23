@@ -3,7 +3,9 @@
 
 const HomeView:React.FC = () => {
   return (
-    <div></div>
+    <div>
+      <title>Home</title>
+    </div>
   )
 }
 
