@@ -24,22 +24,25 @@ const Navbar = () => {
                     hover:border-2 rounded-full border-stone-950 shadow-lg 
                     " /></Link>
 
-                <button className="md:hidden focus:outline-none " onClick={toogleMenu}>
+                <button className="md:hidden focus:outline-none flex flex-col items-center" onClick={toogleMenu}>
                     <Image src={"assets/pokemon-menu.svg"} alt="pokemon sm menu" height={40} width={40}
                         className="cursor-pointer"
                     />
+                    <p className="text-lg">Menu</p>
                 </button>
 
                 <div className={`hidden flex-col md:flex-row md:gap-10 md:mr-4 md:flex`}>
 
                     <Link href={"/"} className="hover:text-blue-700 transition-colors duration-300"><li className={`${pathname === "/" ?
                         "underline decoration-blue-700 underline-offset-8 decoration-4" : ""
-                        }`}>Pokemons</li></Link>
+                        }`}>Home</li></Link>
 
-                    <Link href={"/about"} className="hover:text-lime-600 transition-colors duration-300"><li className={`${pathname === "/about" ?
-                        "underline decoration-lime-600 underline-offset-8 decoration-4" : ""}`}>About</li></Link>
+                    <Link href={"/pokedex"} className="hover:text-lime-600 transition-colors duration-300"><li className={`${pathname === "/pokedex" ?
+                        "underline decoration-lime-600 underline-offset-8 decoration-4" : ""}`}>PokeDex</li></Link>
 
-                    <Link href={"/"}><li className="transition-colors duration-300 hover:text-blue-700">Contact</li></Link>
+                    <Link href={"/pokeapps"} className="transition-colors duration-300 hover:text-red-700"><li className={`
+                        ${pathname === "/pokeapps" ? "underline decoration-red-700 underline-offset-8 decoration-4":""}
+                        `}>Apps</li></Link>
                 </div>
             </ul>
 
@@ -56,13 +59,13 @@ const Navbar = () => {
                 </div>
                 <ul className="flex flex-col p-4">
                     <Link href={"/"} onClick={toogleMenu}>
-                        <li className="py-2 hover:text-blue-700">Pokemons</li>
+                        <li className="py-2 hover:text-blue-700">Home</li>
                     </Link>
-                    <Link href={"/about"} onClick={toogleMenu}>
-                        <li className="py-2 hover:text-lime-600">About</li>
+                    <Link href={"/pokedex"} onClick={toogleMenu}>
+                        <li className="py-2 hover:text-lime-600">PokeDex</li>
                     </Link>
-                    <Link href={"/"} onClick={toogleMenu}>
-                        <li className="py-2 hover:text-blue-700">Contact</li>
+                    <Link href={"/pokeapps"} onClick={toogleMenu}>
+                        <li className="py-2 hover:text-red-700">Apps</li>
                     </Link>
                 </ul>
             </div>
