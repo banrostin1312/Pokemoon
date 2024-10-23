@@ -18,9 +18,26 @@ export const PokemonProvider: React.FC<{ children: ReactNode }> = ({ children })
 
     useEffect(() => {
         const fetchAllPokemons = async () => {
-            const response = await axios.get("https://pokeapi.co/api/v2/pokemon");
-            const data = await response.data;
-            setPokemons(data.results);
+            try {
+                const response = await axios.get("https://pokeapi.co/api/v2/pokemon");
+                const data = await response.data.results;
+                   
+                const pokemonsWhitImages = await Promise.all(
+                    data.map(async (pokemon:IPokemon) => {
+                        const pokemonDetailedResponse = await axios.get(pokemon.url);
+                        return {
+                            name: pokemonDetailedResponse.data.name,
+                            url: pokemonDetailedResponse.data.url,
+                            image: pokemonDetailedResponse.data.sprites.front_default,
+                        }
+                    })
+                )
+                setPokemons(pokemonsWhitImages);
+                
+            } catch (error) {
+                console.error(error);
+            }
+
         }
         fetchAllPokemons();
     }, []);
