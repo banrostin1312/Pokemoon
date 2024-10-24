@@ -33,7 +33,9 @@ export const PokemonProvider: React.FC<{ children: ReactNode }> = ({ children })
                         return {
                             name: pokemonDetailedResponse.data.name,
                             url: pokemonDetailedResponse.data.url,
-                            image: pokemonDetailedResponse.data.sprites.front_default,
+                            image: pokemonDetailedResponse.data.sprites.other['official-artwork'].front_default,
+                            types:pokemonDetailedResponse.data.types,
+                            abilities:pokemonDetailedResponse.data.abilities
                         }
                     })
                 )

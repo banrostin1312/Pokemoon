@@ -1,5 +1,4 @@
 //Vendors
-import Image from "next/image";
 //Components
 import HomeView from "../components/home/HomeView";
 

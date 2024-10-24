@@ -16,11 +16,11 @@ const Navbar = () => {
 
     return (
         <div>
-            <ul className="flex flex-col md:flex-row justify-between items-center gap-7 m-4 text-2xl font-extrabold 
-            bg-white bg-opacity-35 rounded-lg md:h-20
+            <ul className="flex flex-col md:flex-row justify-between items-center gap-7  text-2xl font-extrabold 
+            bg-red-500  rounded-lg md:h-20 fixed top-0 left-0 right-0 w-[100%] mx-auto z-50
             ">
                 <Link href={"/"}><Image src={"/assets/pokeball-icon.png"} alt="pokeball-icon" height={120} width={120}
-                    className="mt-5 hover:scale-75 transform transition-transform duration-500 cursor-pointer
+                    className="mt-11 hover:scale-75 transform transition-transform duration-500 cursor-pointer
                     hover:border-2 rounded-full border-stone-950 shadow-lg 
                     " /></Link>
 

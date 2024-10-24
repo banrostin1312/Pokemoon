@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 body {
-    background-color: rgb(191, 206, 219); /* Gris de fondo */
-
+    background-image: url('../../public/assets/pokemon2-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
