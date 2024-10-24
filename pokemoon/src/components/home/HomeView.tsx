@@ -27,7 +27,7 @@ const HomeView: React.FC = () => {
 
           <ul className="grid lg:grid-cols-3 sm:grid-cols-2 place-items-center 
           bg-blue-900 bg-opacity-65 md:mt-[134px] md:w-[95%] mx-auto rounded-xl sm:gap-9 sm:w-[100%]
-           mb-6 mt-[255px]
+           mb-6 mt-[280px]
           ">
             {pokemons.map((pokemon, index) =>
               <li key={index} className="space-y-3 bg-white  hover:scale-110 bg-opacity-45 rounded-lg h-auto w-72 flex flex-col justify-center items-center
