@@ -3,13 +3,13 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import Image from "next/image"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 
 const Navbar = () => {
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
-    const [opacity, setOpacity] = useState(1);
+    
 
 
     const toogleMenu = () => {
@@ -17,30 +17,20 @@ const Navbar = () => {
     }
 
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollTop = window.scrollY;
-            const newOpacity = Math.max(1 - scrollTop / 200,0.3); 
-            setOpacity(newOpacity);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     return (
         <div>
             <ul className="flex flex-col md:flex-row justify-between items-center gap-7  text-2xl font-extrabold 
-            bg-red-500  rounded-lg md:h-20 fixed top-0 left-0 right-0 w-[100%] mx-auto z-50 transition-opacity duration-300
+            md:bg-red-500 bg-opacity-15 rounded-lg md:h-20  fixed top-0 left-0 right-0 w-[100%] mx-auto z-50 transition-opacity duration-300
             "
-                style={{ opacity:opacity }}
+    
             >
                 <Link href={"/"}><Image src={"/assets/pokeball-icon.png"} alt="pokeball-icon" height={120} width={120}
                     className="mt-11 hover:scale-75 transform transition-transform duration-500 cursor-pointer
-                    hover:border-2 rounded-full border-stone-950 shadow-lg 
+                    hover:border-2 rounded-full border-stone-950 shadow-lg hidden md:block
                     " /></Link>
 
-                <button className="md:hidden focus:outline-none flex flex-col items-center" onClick={toogleMenu}>
+                <button className="md:hidden focus:outline-none flex flex-col items-center absolute top-4 right-1" onClick={toogleMenu}>
                     <Image src={"assets/pokemon-menu.svg"} alt="pokemon sm menu" height={40} width={40}
                         className="cursor-pointer"
                     />
