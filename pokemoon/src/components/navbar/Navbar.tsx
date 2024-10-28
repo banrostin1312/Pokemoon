@@ -4,7 +4,8 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import Image from "next/image"
 import { useState } from "react"
-
+//Styles
+import "./navbar.css"
 
 const Navbar = () => {
     const pathname = usePathname();
@@ -39,15 +40,15 @@ const Navbar = () => {
 
                 <div className={`hidden flex-col md:flex-row md:gap-10 md:mr-4 md:flex`}>
 
-                    <Link href={"/"} className="hover:text-blue-700 transition-colors duration-300"><li className={`${pathname === "/" ?
-                        "underline decoration-blue-700 underline-offset-8 decoration-4" : ""
+                    <Link href={"/"} className="hover:text-blue-700 transition-colors duration-300 btn-one p-3"><li className={`${pathname === "/" ?
+                        "underline decoration-blue-700 underline-offset-8 decoration-2" : ""
                         }`}>Home</li></Link>
 
-                    <Link href={"/pokedex"} className="hover:text-lime-600 transition-colors duration-300"><li className={`${pathname === "/pokedex" ?
-                        "underline decoration-lime-600 underline-offset-8 decoration-4" : ""}`}>PokeDex</li></Link>
+                    <Link href={"/pokedex"} className="hover:text-green-400 transition-colors duration-300 btn-one p-3"><li className={`${pathname === "/pokedex" ?
+                        "underline decoration-green-400 underline-offset-8 decoration-2" : ""}`}>PokeDex</li></Link>
 
-                    <Link href={"/pokeapps"} className="transition-colors duration-300 hover:text-red-700"><li className={`
-                        ${pathname === "/pokeapps" ? "underline decoration-red-700 underline-offset-8 decoration-4" : ""}
+                    <Link href={"/pokeapps"} className="transition-colors duration-300 hover:text-red-700 btn-one p-3"><li className={`
+                        ${pathname === "/pokeapps" ? "underline decoration-red-700 underline-offset-8 decoration-2" : ""}
                         `}>Apps</li></Link>
                 </div>
             </ul>
