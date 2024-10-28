@@ -69,7 +69,7 @@ const SearchPokemon: React.FC<searchPokemonProps> = ({ onSearch, onCategorySelec
             }),
           }}
           // Propiedades obligatorias
-          inputValue={""} // Valor de entrada
+          inputValue={selectedCategory ? selectedCategory.label:""} // Valor de entrada
           onInputChange={(inputValue) => { }} // Maneja cambios en el valor de entrada
           onMenuOpen={() => { }} // Maneja cuando el menú se abre
           onMenuClose={() => { }} // Maneja cuando el menú se cierra
