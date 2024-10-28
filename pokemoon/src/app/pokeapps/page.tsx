@@ -1,10 +1,13 @@
 
-
-
 function PokeApps() {
   return (
     <div>
       <title>PokeApps</title>
+
+
+     
+
+
     </div>
   )
 }

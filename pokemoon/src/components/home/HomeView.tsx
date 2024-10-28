@@ -5,11 +5,12 @@ import { usePokemon } from "@/src/context/PokemonContext";
 import Image from "next/image";
 //Loaders Library
 import { PropagateLoader } from "react-spinners";
-
+//Styles
+import "./card.css"
 
 const HomeView: React.FC = () => {
   const { pokemons, loading, error } = usePokemon();
-  
+
 
   const getTypeColor = (type: string) => {
     switch (type) {
@@ -57,9 +58,10 @@ const HomeView: React.FC = () => {
            mb-6 mt-20
           ">
             {pokemons.map((pokemon, index) =>
-              <li key={index} className="space-y-3 bg-white  hover:scale-110 bg-opacity-45 rounded-lg h-auto w-72 flex flex-col justify-center items-center
-              hover:bg-opacity-55 cursor-pointer transition-transform duration-300 my-5
+              <li key={index} className="space-y-3 bg-white  hover:scale-110  rounded-lg h-auto w-72 flex flex-col justify-center items-center
+              hover:bg-opacity-55 cursor-pointer transition-transform duration-300 my-5 hover:saturate-200 pokemon-card
               ">
+              
                 <Image src={pokemon.image} alt={pokemon.name} height={100} width={145} className="w-auto h-auto" />
 
                 <strong> <h1 className="font-mono">Name: {pokemon.name.toLocaleUpperCase()}</h1></strong>
