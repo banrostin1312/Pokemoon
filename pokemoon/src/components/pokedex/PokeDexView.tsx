@@ -114,8 +114,8 @@ const PokeDexView: React.FC = () => {
                 <div className="grid grid-cols-2 justify-items-center items-center" key={index}>
                   {pokemon.stats.
                     filter((stat) => stat.stat.name === "hp" || stat.stat.name === "attack" || stat.stat.name === "speed" || stat.stat.name === "defense").
-                    map((stat, index) =>
-                      <span className=" font-mono">
+                    map((stat) =>
+                      <span className=" font-mono" key={stat.stat.name}>
                         {stat.stat.name === "hp" ? "❤️" : stat.stat.name === "attack" ? "🗡️" :
                           stat.stat.name === "defense" ? "🛡️" : "⚡"
                         }
