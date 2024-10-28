@@ -44,6 +44,14 @@ const PokeDexView: React.FC = () => {
     setCurrentPage(1); 
   };
 
+  const handleCategorySelected = (category:string) => {
+    const filtered = pokemons.filter((pokemon) =>
+    pokemon.types.some(type => type.type.name === category)
+    );
+    setFilteredPokemons(filtered);
+    setCurrentPage(1);
+  }
+
   useEffect(() => {
     setFilteredPokemons(pokemons);
   }, [pokemons]);
@@ -95,7 +103,7 @@ const PokeDexView: React.FC = () => {
       ) : error ? (<p>{error}</p>)
         : (
           <>
-          <SearchPokemon onSearch={handleSearch}/>
+          <SearchPokemon onSearch={handleSearch} onCategorySelect={handleCategorySelected}/>
             <ul className="grid lg:grid-cols-3 sm:grid-cols-2 place-items-center 
            md:mt-[80px] md:w-[95%] mx-auto rounded-xl sm:gap-9 sm:w-[100%]
            mb-6 mt-20
