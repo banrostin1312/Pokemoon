@@ -78,7 +78,7 @@ const PokeDexView: React.FC = () => {
           <>
           
           <ul className="grid lg:grid-cols-3 sm:grid-cols-2 place-items-center 
-          bg-blue-900 bg-opacity-65 md:mt-[134px] md:w-[95%] mx-auto rounded-xl sm:gap-9 sm:w-[100%]
+           md:mt-[134px] md:w-[95%] mx-auto rounded-xl sm:gap-9 sm:w-[100%]
            mb-6 mt-20
           ">
             {currentPokemons.map((pokemon, index) =>
@@ -137,18 +137,26 @@ const PokeDexView: React.FC = () => {
           </ul>
           <div className="bg-slate-900 w-full h-[2px]"></div>
           <div className="flex justify-center items-center my-2">
-           {Array.from({ length: totalPages }, (_, pageIndex) => (
-             <button
-               key={pageIndex + 1}
-               onClick={() => paginate(pageIndex + 1)}
-               className={`mx-1 px-3 py-1 rounded ${currentPage === pageIndex + 1 ? 'bg-blue-500 text-white' : 'bg-gray-200'}
-               hover:bg-opacity-55
-               `}
-             >
-               {pageIndex + 1}
-             </button>
-           ))}
-         </div>
+  <button
+    onClick={() => paginate(currentPage - 1)}
+    disabled={currentPage === 1}
+    className={`mx-2 px-3 py-1 rounded text-2xl ${currentPage === 1 ? 'bg-gray-300 text-gray-500' : 'bg-gray-200 hover:bg-blue-300 text-black'}`}
+  >
+    🢘
+  </button>
+
+  <span className="mx-4 font-bold text-2xl text-white">
+    {currentPage}
+  </span>
+
+  <button
+    onClick={() => paginate(currentPage + 1)}
+    disabled={currentPage === totalPages}
+    className={`mx-2 px-3 py-1 rounded text-2xl ${currentPage === totalPages ? 'bg-gray-300 text-gray-500' : 'bg-gray-200 hover:bg-blue-300 text-black'}`}
+  >
+    🢚
+  </button>
+</div>
          </>
         )
       }
