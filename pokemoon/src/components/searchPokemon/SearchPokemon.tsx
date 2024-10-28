@@ -20,6 +20,7 @@ const SearchPokemon: React.FC<searchPokemonProps> = ({ onSearch, onCategorySelec
     { value: "fire", label: "Fire" },
     { value: "water", label: "Water" },
     { value: "bug", label: "Bug" },
+    { value: "normal", label: "Normal" },
   ];
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,22 +59,26 @@ const SearchPokemon: React.FC<searchPokemonProps> = ({ onSearch, onCategorySelec
             }),
             menu: (provided) => ({
               ...provided,
-              maxHeight: "200px", // Altura máxima del menú desplegable
-              overflowY: "auto", // Habilitar scroll
-              backgroundColor:"rgba(176, 165, 165, 0.4)"
+              backgroundColor:"rgba(176, 165, 165, 0.4)",
+              zIndex:100,
             }),
-            option: (provided) => ({
+            menuList:(provided) =>({
+              ...provided,
+              maxHeight:"200px",
+              overflowY:"auto"
+            }),
+            option: (provided, { isFocused, isSelected }) => ({
               ...provided,
               color: "white", // Color del texto de las opciones
-              backgroundColor: "rgba(0, 0, 0, 0.5)", // Fondo de las opciones
+              backgroundColor: isSelected
+                ? "rgba(0, 0, 0, 0.8)" // Color cuando está seleccionado
+                : isFocused
+                ? "rgba(100, 100, 100, 0.5)" // Color cuando está enfocado
+                : "rgba(0, 0, 0, 0.5)", // Fondo de las opciones
+              padding: "10px 15px", // Espaciado dentro de las opciones
             }),
           }}
-          // Propiedades obligatorias
-          inputValue={selectedCategory ? selectedCategory.label:""} // Valor de entrada
-          onInputChange={(inputValue) => { }} // Maneja cambios en el valor de entrada
-          onMenuOpen={() => { }} // Maneja cuando el menú se abre
-          onMenuClose={() => { }} // Maneja cuando el menú se cierra
-          isClearable={true} // Permite limpiar la selección
+          
         />
 
 
