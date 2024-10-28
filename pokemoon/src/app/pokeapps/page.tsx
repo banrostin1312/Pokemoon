@@ -5,8 +5,6 @@ function PokeApps() {
       <title>PokeApps</title>
 
 
-     
-
 
     </div>
   )

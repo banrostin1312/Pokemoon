@@ -32,6 +32,7 @@ export const PokemonProvider: React.FC<{ children: ReactNode }> = ({ children })
                         const pokemonDetailedResponse = await axios.get(pokemon.url);
                         const speciesResponse = await axios.get(pokemonDetailedResponse.data.species.url);
                         return {
+                            id:pokemonDetailedResponse.data.id,
                             name: pokemonDetailedResponse.data.name,
                             url: pokemonDetailedResponse.data.url,
                             image: pokemonDetailedResponse.data.sprites.other['official-artwork'].front_default,
