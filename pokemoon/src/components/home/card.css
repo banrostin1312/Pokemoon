@@ -1,3 +1,20 @@
-.pokemon-card{
-    background: linear-gradient(90deg, rgba(255,255,255,1) 9%, rgba(100,106,110,1) 77%);
+.pokemon-card {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 9%, rgba(100, 106, 110, 0.9) 77%);
+    
+}
+
+.border-gold {
+    border: solid 5px;
+    border-color: rgb(241,255,7,0.5);
+    border-radius: 5px;
+    transition: box-shadow 1s ease;
+}
+
+.pokemon-card:hover {
+    transform: scale(1.1);
+    transition: 0.5s ease;
+}
+
+.border-gold:hover {
+    box-shadow: 0 0 10px rgba(223, 216, 14, 0.7), 0 0 20px rgba(253, 187, 45, 0.7);
 }

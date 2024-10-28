@@ -58,13 +58,13 @@ const HomeView: React.FC = () => {
            mb-6 mt-20
           ">
             {pokemons.map((pokemon, index) =>
-              <li key={index} className="space-y-3 bg-white  hover:scale-110  rounded-lg h-auto w-72 flex flex-col justify-center items-center
-              hover:bg-opacity-55 cursor-pointer transition-transform duration-300 my-5 hover:saturate-200 pokemon-card
+              <li key={index} className="space-y-3 bg-white h-auto w-72 flex flex-col justify-center items-center
+              hover:bg-opacity-55 cursor-pointer  my-5 hover:saturate-200 pokemon-card border-gold 
               ">
               
                 <Image src={pokemon.image} alt={pokemon.name} height={100} width={145} className="w-auto h-auto" />
 
-                <strong> <h1 className="font-mono">Name: {pokemon.name.toLocaleUpperCase()}</h1></strong>
+                <strong> <h1 className="font-mono">Name: <span className="text-yellow-300">{pokemon.name.toLocaleUpperCase()}</span></h1></strong>
 
                 <h2>
                   <strong className="text-black font-mono">Types: </strong>
@@ -76,10 +76,10 @@ const HomeView: React.FC = () => {
                   )}
                 </h2>
 
-                <h2>
+                <h2 className="flex flex-wrap justify-center">
                   <strong className="text-black font-mono">Abilities: </strong>
                   {pokemon.abilities.map((abilitie, abilitieIndex) =>
-                    <span key={abilitie.ability.name} className="font-mono">
+                    <span key={abilitie.ability.name} className="font-mono text-white">
                       {abilitie.ability.name}
                       {abilitieIndex < pokemon.abilities.length - 1 && ', '}
                     </span>
