@@ -1,4 +1,4 @@
-.btn-one {
+/* .btn-one {
     color: #FFF;
     transition: all 0.3s;
     position: relative;
@@ -45,5 +45,51 @@
   .btn-one:hover::after {
     opacity: 0; 
     transform: scale(0.1, 1);
-  }
-  
+  } */
+
+.first-btn {
+  background: rgba(255, 255, 255, 0.295);
+  border-radius: 5px;
+  color: rgb(8, 8, 99);
+  transition: all 0.5s ease;
+   cursor: url('../../../public/cursors/pokeball-cursor.cur'),auto;
+}
+
+.first-btn:hover {
+  background: #03e9f4;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+  color: white;
+}
+
+.second-btn{
+  background: rgba(255, 255, 255, 0.295);
+  border-radius: 5px;
+  color:greenyellow;
+  transition: all 0.5s ease;
+  cursor: url('../../../public/cursors/pokedex-cursor.cur'),auto;
+}
+
+.second-btn:hover{
+  background:greenyellow ;
+  box-shadow: 0 0 5px greenyellow, 0 0 25px greenyellow, 0 0 50px greenyellow, 0 0 200px greenyellow;
+  -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+  color: white;
+}
+
+.third-btn{
+  background: rgba(255, 255, 255, 0.295);
+  border-radius: 5px;
+  color:rgb(188, 4, 4);
+  transition: all 0.5s ease;
+  cursor: url('../../../public/cursors/pokeapp-cursor.cur'),auto;
+}
+
+.third-btn:hover{
+  background:rgb(188, 4, 4) ;
+  box-shadow: 0 0 5px rgb(188, 4, 4), 0 0 25px rgb(188, 4, 4), 0 0 50px rgb(188, 4, 4), 0 0 200px rgb(188, 4, 4);
+  -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+  color: white;
+
+
+}

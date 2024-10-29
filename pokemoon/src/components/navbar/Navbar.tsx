@@ -10,7 +10,7 @@ import "./navbar.css"
 const Navbar = () => {
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
-    
+
 
 
     const toogleMenu = () => {
@@ -22,9 +22,9 @@ const Navbar = () => {
     return (
         <div>
             <ul className="flex flex-col md:flex-row justify-between items-center gap-7  text-2xl font-extrabold 
-            md:bg-red-500 bg-opacity-15 rounded-lg md:h-20  fixed top-0 left-0 right-0 w-[100%] mx-auto z-50 transition-opacity duration-300
+            md:bg-black md:bg-opacity-75 rounded-lg md:h-20  fixed top-0 left-0 right-0 w-[100%] mx-auto z-50 transition-opacity duration-300
             "
-    
+
             >
                 <Link href={"/"}><Image src={"/assets/pokeball-icon.png"} alt="pokeball-icon" height={120} width={120}
                     className="mt-11 hover:scale-75 transform transition-transform duration-500 cursor-pointer
@@ -40,14 +40,14 @@ const Navbar = () => {
 
                 <div className={`hidden flex-col md:flex-row md:gap-10 md:mr-4 md:flex`}>
 
-                    <Link href={"/"} className="hover:text-blue-700 transition-colors duration-300 btn-one p-3"><li className={`${pathname === "/" ?
-                        "underline decoration-blue-700 underline-offset-8 decoration-2" : ""
+                    <Link href={"/"} className="p-3 first-btn"><li className={`${pathname === "/" ?
+                        "underline decoration-blue-800 underline-offset-8 decoration-2" : ""
                         }`}>Home</li></Link>
 
-                    <Link href={"/pokedex"} className="hover:text-green-400 transition-colors duration-300 btn-one p-3"><li className={`${pathname === "/pokedex" ?
-                        "underline decoration-green-400 underline-offset-8 decoration-2" : ""}`}>PokeDex</li></Link>
+                    <Link href={"/pokedex"} className="p-3 second-btn"><li className={`${pathname === "/pokedex" ?
+                        "underline decoration-green-300 underline-offset-8 decoration-2" : ""}`}>PokeDex</li></Link>
 
-                    <Link href={"/pokeapps"} className="transition-colors duration-300 hover:text-red-700 btn-one p-3"><li className={`
+                    <Link href={"/pokeapps"} className="p-3 third-btn"><li className={`
                         ${pathname === "/pokeapps" ? "underline decoration-red-700 underline-offset-8 decoration-2" : ""}
                         `}>Apps</li></Link>
                 </div>

@@ -8,5 +8,9 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
 }
 
+html{
+    cursor:url('../../public/cursors/pokecards-cursor.cur'),auto;
+}

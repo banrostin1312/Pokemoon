@@ -110,7 +110,7 @@ const PokeDexView: React.FC = () => {
           ">
               {currentPokemons.map((pokemon, index) =>
                 <li key={index} className="space-y-3 bg-white h-auto w-72 flex flex-col justify-center items-center
-              hover:bg-opacity-55 cursor-pointer  my-5 hover:saturate-200 pokemon-card border-gold 
+              hover:bg-opacity-55 my-5 hover:saturate-200 pokemon-card border-gold 
               ">
                 <span className="absolute z-0 text-white text-[100px] opacity-20">{pokemon.id}</span>
                   <Image src={pokemon.image} alt={pokemon.name} height={100} width={145} className="w-auto h-auto" />
