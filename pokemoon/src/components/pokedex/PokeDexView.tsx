@@ -127,7 +127,7 @@ const PokeDexView: React.FC = () => {
 
                   <h2>
                     <strong className="text-black font-mono">📊Types: </strong>
-                    {pokemon.types.map((type, typeIndex) =>
+                    {pokemon.types.map((type) =>
                       <span key={type.type.name} className={`${getTypeColor(type.type.name)} font-mono bg-invicible rounded mx-1 text-white bg-opacity-75`}>
                         {type.type.name}
                       </span>
