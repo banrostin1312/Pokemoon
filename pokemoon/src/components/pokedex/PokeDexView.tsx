@@ -113,8 +113,8 @@ const PokeDexView: React.FC = () => {
           <>
             <SearchPokemon onSearch={handleSearch} onCategorySelect={handleCategorySelected} />
             <ul className="grid lg:grid-cols-3 sm:grid-cols-2 place-items-center 
-           md:mt-[80px] md:w-[95%] mx-auto rounded-xl sm:gap-9 sm:w-[100%]
-           mb-6 mt-20
+            md:w-[95%] mx-auto rounded-xl sm:gap-9 sm:w-[100%] mt-[-100px]
+          
           ">
               {currentPokemons.map((pokemon, index) =>
                 <li key={index} className="space-y-3 bg-white h-auto w-72 flex flex-col justify-center items-center
