@@ -22,7 +22,7 @@ export const PokemonProvider: React.FC<{ children: ReactNode }> = ({ children })
     useEffect(() => {
         console.log("fetching all pokemons.....");
 
-        const fetchAllPokemons = async (offset = 0, limit = 500) => {
+        const fetchAllPokemons = async (offset = 0, limit = 700) => {
             try {
                 const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`);
                 const data = await response.data.results;

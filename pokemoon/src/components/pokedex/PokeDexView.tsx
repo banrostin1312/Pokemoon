@@ -41,12 +41,12 @@ const PokeDexView: React.FC = () => {
       pokemon.name.toLowerCase().includes(term.toLowerCase())
     );
     setFilteredPokemons(filtered);
-    setCurrentPage(1); 
+    setCurrentPage(1);
   };
 
-  const handleCategorySelected = (category:string) => {
+  const handleCategorySelected = (category: string) => {
     const filtered = pokemons.filter((pokemon) =>
-    pokemon.types.some(type => type.type.name === category)
+      pokemon.types.some(type => type.type.name === category)
     );
     setFilteredPokemons(filtered);
     setCurrentPage(1);
@@ -60,33 +60,41 @@ const PokeDexView: React.FC = () => {
   const getTypeColor = (type: string) => {
     switch (type) {
       case "grass":
-        return "text-green-300"
+        return "bg-green-300"
       case 'water':
-        return 'text-blue-500';
+        return 'bg-blue-500';
       case 'fire':
-        return 'text-red-500';
+        return 'bg-red-500';
       case 'bug':
-        return 'text-green-700';
+        return 'bg-green-700';
       case 'normal':
-        return 'text-gray-200';
+        return 'bg-gray-200';
       case 'poison':
-        return 'text-purple-800';
+        return 'bg-purple-800';
       case 'electric':
-        return 'text-yellow-500';
+        return 'bg-yellow-500';
       case 'ground':
-        return 'text-brown-500';
+        return 'bg-stone-700';
       case 'fairy':
-        return 'text-pink-400';
+        return 'bg-pink-400';
       case 'fighting':
-        return 'text-orange-600';
+        return 'bg-orange-600';
       case 'rock':
-        return 'text-amber-800';
+        return 'bg-amber-800';
       case 'psychic':
-        return 'text-violet-600'
+        return 'bg-violet-600'
       case 'flying':
-        return 'text-blue-300'
+        return 'bg-blue-300'
+      case 'dragon':
+        return 'bg-red-700'
+      case 'steel':
+        return 'bg-zinc-300'
+        case 'ice':
+        return 'bg-cyan-200'
+        case 'dark':
+          return 'bg-slate-950'
       default:
-        return "text-white"
+        return "bg-white"
     }
   }
 
@@ -98,12 +106,12 @@ const PokeDexView: React.FC = () => {
       <title>PokeDex</title>
       {loading ? (
         <div className="flex items-center justify-center h-screen">
-          <PropagateLoader/>
+          <PropagateLoader />
         </div>
       ) : error ? (<p>{error}</p>)
         : (
           <>
-          <SearchPokemon onSearch={handleSearch} onCategorySelect={handleCategorySelected}/>
+            <SearchPokemon onSearch={handleSearch} onCategorySelect={handleCategorySelected} />
             <ul className="grid lg:grid-cols-3 sm:grid-cols-2 place-items-center 
            md:mt-[80px] md:w-[95%] mx-auto rounded-xl sm:gap-9 sm:w-[100%]
            mb-6 mt-20
@@ -112,7 +120,7 @@ const PokeDexView: React.FC = () => {
                 <li key={index} className="space-y-3 bg-white h-auto w-72 flex flex-col justify-center items-center
               hover:bg-opacity-55 my-5 hover:saturate-200 pokemon-card border-gold 
               ">
-                <span className="absolute z-0 text-white text-[100px] opacity-20">{pokemon.id}</span>
+                  <span className="absolute z-0 text-white text-[100px] opacity-20">{pokemon.id}</span>
                   <Image src={pokemon.image} alt={pokemon.name} height={100} width={145} className="w-auto h-auto" />
 
                   <strong> <h1 className="font-mono">🏷️Name: <span className="text-yellow-100">{pokemon.name.toLocaleUpperCase()}</span></h1></strong>
@@ -120,9 +128,8 @@ const PokeDexView: React.FC = () => {
                   <h2>
                     <strong className="text-black font-mono">📊Types: </strong>
                     {pokemon.types.map((type, typeIndex) =>
-                      <span key={type.type.name} className={`${getTypeColor(type.type.name)} font-mono`}>
+                      <span key={type.type.name} className={`${getTypeColor(type.type.name)} font-mono bg-invicible rounded mx-1 text-white bg-opacity-75`}>
                         {type.type.name}
-                        {typeIndex < pokemon.types.length - 1 && ', '}
                       </span>
                     )}
                   </h2>

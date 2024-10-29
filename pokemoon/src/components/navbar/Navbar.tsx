@@ -22,7 +22,7 @@ const Navbar = () => {
     return (
         <div>
             <ul className="flex flex-col md:flex-row justify-between items-center gap-7  text-2xl font-extrabold 
-            md:bg-black md:bg-opacity-75 rounded-lg md:h-20  fixed top-0 left-0 right-0 w-[100%] mx-auto z-50 transition-opacity duration-300
+            md:bg-black md:bg-opacity-85 rounded-lg md:h-20  fixed top-0 left-0 right-0 w-[100%] mx-auto z-50 transition-opacity duration-300
             "
 
             >

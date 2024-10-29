@@ -2,7 +2,8 @@
 //Vendors
 import { useState } from "react"
 import Select from "react-select";
-//Contexts
+//Helpers
+import categories from "@/src/helpers/categories";
 
 interface searchPokemonProps {
   onSearch: (term: string) => void;
@@ -14,14 +15,7 @@ interface searchPokemonProps {
 const SearchPokemon: React.FC<searchPokemonProps> = ({ onSearch, onCategorySelect }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<{ value: string; label: string } | null>(null)
-  const categories = [
-    { value: "all", label: "Todos" },
-    { value: "grass", label: "Grass" },
-    { value: "fire", label: "Fire" },
-    { value: "water", label: "Water" },
-    { value: "bug", label: "Bug" },
-    { value: "normal", label: "Normal" },
-  ];
+  
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const term = e.target.value
@@ -48,7 +42,7 @@ const SearchPokemon: React.FC<searchPokemonProps> = ({ onSearch, onCategorySelec
           options={categories}
           onChange={handleCategoryChange}
           className="w-32"
-          placeholder="Seleccionar categoría"
+          placeholder="Category"
           value={selectedCategory}
           styles={{
             control: (provided) => ({
