@@ -48,7 +48,7 @@ const SearchPokemon: React.FC<searchPokemonProps> = ({ onSearch, onCategorySelec
         ></Image>
        <input
           type="text"
-          placeholder="Search Pokémon by name..."
+          placeholder="Search Pokémon by name......"
           value={searchTerm}
           onChange={handleSearchChange}
           className="p-2 border border-white rounded-md w-full bg-sky-800 bg-opacity-50 placeholder-white mb-4"
