@@ -123,7 +123,7 @@ const PokeDexView: React.FC = () => {
                   <span className="absolute z-0 text-white text-[100px] opacity-20">{pokemon.id}</span>
                   <Image src={pokemon.image} alt={pokemon.name} height={100} width={145} className="w-auto h-auto" />
 
-                  <strong> <h1 className="font-mono">🏷️Name: <span className="text-yellow-100">{pokemon.name.toLocaleUpperCase()}</span></h1></strong>
+                  <strong> <h1 className="font-mono">🏷️Name : <span className="text-yellow-100">{pokemon.name.toLocaleUpperCase()}</span></h1></strong>
 
                   <h2>
                     <strong className="text-black font-mono">📊Types: </strong>
