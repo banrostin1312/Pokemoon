@@ -161,7 +161,7 @@ const PokeDexView: React.FC = () => {
 
                   <div>
                     <strong className="text-black font-mono">⭐IsLegendary</strong>:
-                    {pokemon.isLegendary === true ? "✅" : "❌"}
+                    {pokemon.isLegendary === true ? "🧪" : "❌"}
                   </div>
                 </li>
 
