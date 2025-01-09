@@ -7,7 +7,7 @@ import { useState } from "react"
 //Styles
 import "./navbar.css"
 
-const Navbar = () => {
+const Navbar:React.FC = () => {
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
 
